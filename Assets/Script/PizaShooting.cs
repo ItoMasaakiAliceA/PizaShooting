@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PizaShooting : MonoBehaviour
 {
-    [SerializeField] GameObject piza;
     [SerializeField] GameObject assistant1;
     [SerializeField] GameObject assistant2;
     
@@ -58,11 +57,13 @@ public class PizaShooting : MonoBehaviour
         {
             sign = -1;
         }
-        for (float x = 0; x <= target_x * sign; x += Random.Range(LevManeger.minSpeed, LevManeger.maxSpeed)){
+        float speed = Random.Range(LevManeger.minSpeed, LevManeger.maxSpeed);
+        for (float x = 0; x <= target_x * sign; x += speed){
             float y = a * (x*sign) * (x*sign) + b * (x*sign);
             transform.position = new Vector3(x*sign, y*sign, 0) + offset;
             yield return null;
         }
+        
         finish = true;
     }
 

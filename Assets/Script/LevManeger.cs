@@ -19,7 +19,7 @@ public class LevManeger : MonoBehaviour
     [SerializeField] float normalMinSpeed = 0.05f;
     [SerializeField] float normalMaxSpeed = 0.1f;
     [SerializeField] float hardMinSpeed = 0.1f;
-    [SerializeField] float hardMaxSpeed  =0.2f;
+    [SerializeField] float hardMaxSpeed = 0.2f;
 
     public static float minSpeed;
     public static float maxSpeed;
@@ -54,6 +54,8 @@ public class LevManeger : MonoBehaviour
                 TitleManeger.levelText.color = new Color(1f, 0f, 0f, 1f);
                 minSpeed = hardMinSpeed;
                 maxSpeed = hardMaxSpeed;
+                Debug.Log(hardMinSpeed);
+                Debug.Log(hardMaxSpeed);
                 break;
         }
     }

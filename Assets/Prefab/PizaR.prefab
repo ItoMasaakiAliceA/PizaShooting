@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1928298336806607734
+--- !u!1 &5042442429087119984
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1928298336806607738}
-  - component: {fileID: 1928298336806607739}
-  - component: {fileID: 1928298336806607732}
-  - component: {fileID: 1928298336806607733}
-  - component: {fileID: 1928298336806607737}
+  - component: {fileID: 8856694155125048504}
+  - component: {fileID: 4254788497966495437}
+  - component: {fileID: 4844362440826409628}
+  - component: {fileID: 1120706359413562211}
+  - component: {fileID: 8091636055086306311}
   m_Layer: 0
-  m_Name: LPiza
+  m_Name: PizaR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1928298336806607738
+--- !u!4 &8856694155125048504
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928298336806607734}
+  m_GameObject: {fileID: 5042442429087119984}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.028, y: 2, z: 4}
   m_LocalScale: {x: 1, y: 0.0376, z: 1}
@@ -35,21 +35,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &1928298336806607739
+--- !u!33 &4254788497966495437
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928298336806607734}
+  m_GameObject: {fileID: 5042442429087119984}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1928298336806607732
+--- !u!23 &4844362440826409628
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928298336806607734}
+  m_GameObject: {fileID: 5042442429087119984}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1928298336806607733
+--- !u!136 &1120706359413562211
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928298336806607734}
+  m_GameObject: {fileID: 5042442429087119984}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -99,18 +99,17 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &1928298336806607737
+--- !u!114 &8091636055086306311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928298336806607734}
+  m_GameObject: {fileID: 5042442429087119984}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1110cff2fafe1f447b8f77f60a76077b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piza: {fileID: 1928298336806607734}
-  assistant1: {fileID: 0}
-  assistant2: {fileID: 0}
+  assistant1: {fileID: 1882314254873209347, guid: a7ac0face5bef884c84240c1891d9082, type: 3}
+  assistant2: {fileID: 2319023130809099643, guid: 99d13789c4e55a943a91d26ed2ed8b19, type: 3}
