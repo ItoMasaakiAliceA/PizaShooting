@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7173815434021528420}
   - component: {fileID: 3402943024798329499}
   - component: {fileID: 5836496647760848383}
+  - component: {fileID: 2410051132572374312}
   m_Layer: 0
   m_Name: PizaL
   m_TagString: Untagged
@@ -113,3 +114,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assistant1: {fileID: 2319023130809099643, guid: 99d13789c4e55a943a91d26ed2ed8b19, type: 3}
   assistant2: {fileID: 1882314254873209347, guid: a7ac0face5bef884c84240c1891d9082, type: 3}
+  startingHealth: 100
+  pizaPoint: 100
+  currentHealth: 0
+--- !u!111 &2410051132572374312
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7299904492600478600}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

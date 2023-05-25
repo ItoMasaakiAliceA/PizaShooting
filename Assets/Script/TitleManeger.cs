@@ -34,6 +34,7 @@ public class TitleManeger : MonoBehaviour
 
 
         levelText = text;
+        LevManeger.Level = LevManeger.easy;
         TitleManeger.levelText.text = "EASY";
         levelText.color = new Color(0f, 1f, 0.196f, 1f);
     }

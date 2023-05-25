@@ -2762,7 +2762,7 @@ MonoBehaviour:
   normalMinSpeed: 0.05
   normalMaxSpeed: 0.1
   hardMinSpeed: 0.01
-  hardMaxSpeed: 0.1
+  hardMaxSpeed: 0.2
 --- !u!1 &1189670616
 GameObject:
   m_ObjectHideFlags: 0
