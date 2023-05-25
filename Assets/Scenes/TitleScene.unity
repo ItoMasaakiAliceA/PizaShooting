@@ -1234,6 +1234,12 @@ MonoBehaviour:
   easyPanel: {fileID: 557180746}
   normalPanel: {fileID: 955691847}
   hardPanel: {fileID: 1021705230}
+  easyMinSpeed: 0.02
+  easyMaxSpeed: 0.04
+  normalMinSpeed: 0.05
+  normalMaxSpeed: 0.1
+  hardMinSpeed: 0.01
+  hardMaxSpeed: 0.1
 --- !u!1 &573553645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1298,12 @@ MonoBehaviour:
   easyPanel: {fileID: 557180746}
   normalPanel: {fileID: 955691847}
   hardPanel: {fileID: 1021705230}
+  easyMinSpeed: 0.02
+  easyMaxSpeed: 0.04
+  normalMinSpeed: 0.05
+  normalMaxSpeed: 0.1
+  hardMinSpeed: 0.1
+  hardMaxSpeed: 0.2
 --- !u!114 &573553648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2480,6 +2492,12 @@ MonoBehaviour:
   easyPanel: {fileID: 557180746}
   normalPanel: {fileID: 955691847}
   hardPanel: {fileID: 1021705230}
+  easyMinSpeed: 0.02
+  easyMaxSpeed: 0.04
+  normalMinSpeed: 0.05
+  normalMaxSpeed: 0.1
+  hardMinSpeed: 0.01
+  hardMaxSpeed: 0.1
 --- !u!1 &958603508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,6 +2757,12 @@ MonoBehaviour:
   easyPanel: {fileID: 557180746}
   normalPanel: {fileID: 955691847}
   hardPanel: {fileID: 1021705230}
+  easyMinSpeed: 0.02
+  easyMaxSpeed: 0.04
+  normalMinSpeed: 0.05
+  normalMaxSpeed: 0.1
+  hardMinSpeed: 0.01
+  hardMaxSpeed: 0.1
 --- !u!1 &1189670616
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,12 +14,23 @@ public class LevManeger : MonoBehaviour
     [SerializeField] GameObject easyPanel;
     [SerializeField] GameObject normalPanel;
     [SerializeField] GameObject hardPanel;
-    [SerializeField] 
+    [SerializeField] float easyMinSpeed = 0.02f;
+    [SerializeField] float easyMaxSpeed = 0.04f;
+    [SerializeField] float normalMinSpeed = 0.05f;
+    [SerializeField] float normalMaxSpeed = 0.1f;
+    [SerializeField] float hardMinSpeed = 0.1f;
+    [SerializeField] float hardMaxSpeed = 0.2f;
+
+    public static float minSpeed;
+    public static float maxSpeed;
+
     //[SerializeField] TextMeshProUGUI levelText;
     // Start is called before the first frame update
 
     private void Awake()
     {
+        minSpeed = easyMinSpeed;
+        maxSpeed = easyMaxSpeed;
     }
 
     public void LevelText()
@@ -29,14 +40,22 @@ public class LevManeger : MonoBehaviour
             case easy:
                 TitleManeger.levelText.text = "EASY";
                 TitleManeger.levelText.color = new Color(0f, 1f, 0.2f, 1f);
+                minSpeed = easyMinSpeed;
+                maxSpeed = easyMaxSpeed;
                 break;
             case normal:
                 TitleManeger.levelText.text = "NORMAL";
                 TitleManeger.levelText.color = new Color(1f, 1f, 0f, 1f);
+                minSpeed = normalMinSpeed;
+                maxSpeed = normalMaxSpeed;
                 break;
             case hard:
                 TitleManeger.levelText.text = "HARD";
                 TitleManeger.levelText.color = new Color(1f, 0f, 0f, 1f);
+                minSpeed = hardMinSpeed;
+                maxSpeed = hardMaxSpeed;
+                Debug.Log(hardMinSpeed);
+                Debug.Log(hardMaxSpeed);
                 break;
         }
     }

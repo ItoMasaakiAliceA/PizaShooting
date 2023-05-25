@@ -49,7 +49,7 @@ public class TitleManeger : MonoBehaviour
         if (Input.GetMouseButtonDown(0)&& check == false && timer >= timeBetweenClicks &&
             Time.timeScale != 0) {
             Debug.Log("Start");
-            //SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
         }
         if (Input.GetMouseButtonDown(0))
         {
