@@ -17,6 +17,9 @@ public class TitleManeger : MonoBehaviour
     public static Slider SESlider;
     public static Slider mSlider;
 
+    private float bgmVolume;
+    private float seVolume;
+
     AudioSource[] titleAudio;
     bool check;
     public static float timer;
@@ -29,8 +32,14 @@ public class TitleManeger : MonoBehaviour
         mSlider = mSetSlider;
         SESlider = SESetSlider;
 
-        titleAudio[0].volume = mSlider.value;
-        titleAudio[1].volume = SESlider.value;
+        float bgmVolume = PlayerPrefs.GetFloat("bgm");
+        float seVolume = PlayerPrefs.GetFloat("se");
+
+        mSlider.value = bgmVolume;
+        SESlider.value = seVolume;
+
+        titleAudio[0].volume = bgmVolume;
+        titleAudio[1].volume = seVolume;
 
 
         levelText = text;
@@ -49,7 +58,8 @@ public class TitleManeger : MonoBehaviour
         if (Input.GetMouseButtonDown(0)&& check == false && timer >= timeBetweenClicks &&
             Time.timeScale != 0) {
             Debug.Log("Start");
-            //SceneManager.LoadScene(1);
+            SaveVolume();
+            SceneManager.LoadScene("GamePlayScene");
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -69,6 +79,13 @@ public class TitleManeger : MonoBehaviour
                 check = true;
             }
         }
-
+    }
+    public void SaveVolume()
+    {
+        PlayerPrefs.SetFloat("bgm", mSlider.value);
+        PlayerPrefs.SetFloat("se", SESlider.value);
+        Debug.Log("save");
+        Debug.Log(PlayerPrefs.GetFloat("bgm"));
+        Debug.Log(PlayerPrefs.GetFloat("se"));
     }
 }
