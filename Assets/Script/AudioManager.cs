@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] Slider mSetSlider;
     [SerializeField] Slider SESetSlider;
-    [SerializeField] AudioClip sound1;
+    [SerializeField] AudioClip[] soundSE;
+
 
     public static Slider SESlider;
     public static Slider mSlider;
@@ -40,11 +42,32 @@ public class AudioManager : MonoBehaviour
 
     public void Update()
     {
+
+        gameAudio[0].volume = mSlider.value;
+        gameAudio[1].volume = SESlider.value;
+
+        // Escキーを押したとき
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameAudio[1].PlayOneShot(sound1);
+            gameAudio[1].PlayOneShot(soundSE[1]);
             Debug.Log("なってるはず");
         }
+
+        // マウスがクリックされたとき
+        if (Input.GetMouseButtonDown(0))
+        {
+            // SceneがGamePlayManagerならこっち
+            if (SceneManager.GetActiveScene().name == "GamePlayScene")
+            {
+                gameAudio[1].PlayOneShot(soundSE[2]);
+            }
+            // 違うならこっち
+            else
+            {
+                gameAudio[1].PlayOneShot(soundSE[0]);
+            }
+        }
+
     }
 
     public void SaveVolume()
