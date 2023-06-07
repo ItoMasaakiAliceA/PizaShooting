@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Audio
   - Drop
+  - ray
   layers:
   - Default
   - TransparentFX
