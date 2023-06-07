@@ -24,6 +24,7 @@ public class PizaManeger : MonoBehaviour
     [SerializeField] float insMinSpeed = 0.5f;
     [SerializeField] float insMaxSpeed = 2.0f;
     [SerializeField] float maxTimer = 10f;
+    [SerializeField] Texture2D texture;
 
 
     public static float wait;
@@ -41,16 +42,18 @@ public class PizaManeger : MonoBehaviour
     float timer;
     bool finish;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        score = 0;
-        finish = false;
-    }
 
     private void Awake()
     {
+        score = 0;
+        finish = false;
 
+        Vector2 hotspot;
+        hotspot.x = texture.width * 0.5f;
+        hotspot.y = texture.height * 0.5f;
+
+
+        Cursor.SetCursor(texture, hotspot, CursorMode.ForceSoftware);
 
         switch (LevManeger.Level)
         {
@@ -80,11 +83,12 @@ public class PizaManeger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(ReceiveEvent.btns[0] == false)
+        {
+            timer += Time.deltaTime;
+            timerImage.fillAmount = 1 - (timer / maxTimer);
+        }
 
-        timer += Time.deltaTime;
-        timerImage.fillAmount = 1-(timer / maxTimer);
-
-        Debug.Log(score);
         if(timer >= maxTimer || Time.timeScale == 0)
         {
             finish = true;
