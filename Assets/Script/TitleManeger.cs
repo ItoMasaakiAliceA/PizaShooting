@@ -4,11 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class TitleManeger : MonoBehaviour
 {
     [SerializeField] float timeBetweenClicks = 0.15f;
     [SerializeField] TextMeshProUGUI text;
+    [SerializeField] UnityEvent PlayClik = new UnityEvent();
 
 
     public static TextMeshProUGUI levelText;
@@ -29,6 +31,11 @@ public class TitleManeger : MonoBehaviour
     {
         CheckBtn(ReceiveEvent.btns);
         //Debug.Log("TitleCheck = " + check);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            PlayClik.Invoke();
+        }
 
         if (Input.GetMouseButtonDown(0)&& check == false && timer >= timeBetweenClicks &&
             Time.timeScale != 0) {

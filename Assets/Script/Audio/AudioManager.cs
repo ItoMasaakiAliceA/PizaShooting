@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] Slider mSetSlider;
     [SerializeField] Slider SESetSlider;
     [SerializeField] AudioClip[] soundSE;
+    [SerializeField] AudioClip[] soundBGM;
 
 
     public static Slider SESlider;
@@ -35,24 +36,60 @@ public class AudioManager : MonoBehaviour
         gameAudio[0].volume = bgmVolume;
         gameAudio[1].volume = seVolume;
 
-        Debug.Log(gameAudio[0].volume);
-        Debug.Log(gameAudio[1].volume);
+        PlayBGM();
     }
 
 
     public void Update()
     {
-
         gameAudio[0].volume = mSlider.value;
         gameAudio[1].volume = SESlider.value;
+    }
 
+    public void SaveVolume()
+    {
+        PlayerPrefs.SetFloat("bgm", mSlider.value);
+        PlayerPrefs.SetFloat("se", SESlider.value);
+        Debug.Log("save");
+        Debug.Log(PlayerPrefs.GetFloat("bgm"));
+        Debug.Log(PlayerPrefs.GetFloat("se"));
+    }
+
+    public void PlayBGM()
+    {
+        //  タイトルシーンで流すやつ
+        if (SceneManager.GetActiveScene().name == "TitleScene")
+        {
+            gameAudio[0].PlayOneShot(soundBGM[0]);
+        }
+
+        if (SceneManager.GetActiveScene().name == "GamePlayScene")
+        {
+            gameAudio[0].PlayOneShot(soundBGM[1]);
+        }
+
+        // GamePlaySceneからリザルト画面のとこが出来次第変える
+        //if (SceneManager.GetActiveScene().name == "ResultScene")
+        //{
+            // ライフが０になった場合はこのBGM を流す
+            //gameAudio[0].PlayOneShot(soundBGM[2]);
+            // 違ったらこの曲
+            //gameAudio[0].PlayOneShot(soundBGM[3]);
+        //}
+    }
+
+    public void PlayEsc()
+    {
         // Escキーを押したとき
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gameAudio[1].PlayOneShot(soundSE[1]);
             Debug.Log("なってるはず");
         }
+    }
 
+    public void PlayClik()
+    {
         // マウスがクリックされたとき
         if (Input.GetMouseButtonDown(0))
         {
@@ -67,16 +104,16 @@ public class AudioManager : MonoBehaviour
                 gameAudio[1].PlayOneShot(soundSE[0]);
             }
         }
-
     }
 
-    public void SaveVolume()
+    public void Explosion()
     {
-        PlayerPrefs.SetFloat("bgm", mSlider.value);
-        PlayerPrefs.SetFloat("se", SESlider.value);
-        Debug.Log("save");
-        Debug.Log(PlayerPrefs.GetFloat("bgm"));
-        Debug.Log(PlayerPrefs.GetFloat("se"));
+        gameAudio[1].PlayOneShot(soundSE[3]);
+    }
+
+    public void HitObject()
+    {
+        gameAudio[1].PlayOneShot(soundSE[4]);
     }
 
 }
