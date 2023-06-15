@@ -58,7 +58,7 @@ public class LevManeger : MonoBehaviour
         easyPanel.SetActive(false);
         normalPanel.SetActive(false);
         hardPanel.SetActive(false);
-        TitleManeger.timer = 0f;
+        ReceiveEvent.timer = 0f;
         LevelText();
     }
 
