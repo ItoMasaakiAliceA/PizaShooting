@@ -68,14 +68,13 @@ public class AudioManager : MonoBehaviour
             gameAudio[0].PlayOneShot(soundBGM[1]);
         }
 
-        // GamePlaySceneからリザルト画面のとこが出来次第変える
-        //if (SceneManager.GetActiveScene().name == "ResultScene")
-        //{
-            // ライフが０になった場合はこのBGM を流す
-            //gameAudio[0].PlayOneShot(soundBGM[2]);
-            // 違ったらこの曲
-            //gameAudio[0].PlayOneShot(soundBGM[3]);
-        //}
+        if (SceneManager.GetActiveScene().name == "ResultScene")
+        {
+            gameAudio[0].PlayOneShot(soundBGM[2]);
+        }
+        
+        //gameAudio[0].PlayOneShot(soundBGM[3]);
+        
     }
 
     public void PlayEsc()
@@ -88,7 +87,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayClik()
+    public void PlayClick()
     {
         // マウスがクリックされたとき
         if (Input.GetMouseButtonDown(0))
@@ -105,6 +104,13 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+    public void ClickRetry()
+    {
+
+    }
+
+
 
     // 爆発時に流れるよ
     public void Explosion()
