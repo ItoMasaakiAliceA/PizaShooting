@@ -106,11 +106,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // ”š”­‚É—¬‚ê‚é‚æ
     public void Explosion()
     {
         gameAudio[1].PlayOneShot(soundSE[3]);
     }
 
+    // ‘ÎÛ‚É“–‚½‚Á‚½‚ç—¬‚ê‚é‚æ
     public void HitObject()
     {
         gameAudio[1].PlayOneShot(soundSE[4]);

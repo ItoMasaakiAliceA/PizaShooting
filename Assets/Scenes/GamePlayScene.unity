@@ -1458,5 +1458,13 @@ PrefabInstance:
       propertyPath: SESetSlider
       value: 
       objectReference: {fileID: 1571727283}
+    - target: {fileID: 7495962453752440289, guid: 3143a5da9455b2847ba58d0a4073968b, type: 3}
+      propertyPath: soundSE.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495962453752440289, guid: 3143a5da9455b2847ba58d0a4073968b, type: 3}
+      propertyPath: soundSE.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 43f99235409c6a640a2e286fbc85f767, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3143a5da9455b2847ba58d0a4073968b, type: 3}
