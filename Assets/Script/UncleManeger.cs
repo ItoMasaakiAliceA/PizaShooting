@@ -78,8 +78,11 @@ public class UncleManeger : MonoBehaviour
         {
             uncle.GetComponent<MeshRenderer>().material.mainTexture = angryUncleTex;
             uncleAng = true;
-            HPManeger.currentHP--;
-            HPManeger.UpdateHP();
+            if(HPManeger.currentHP > 0)
+            {
+                HPManeger.currentHP--;
+                HPManeger.UpdateHP();
+            }
         }
     }
 

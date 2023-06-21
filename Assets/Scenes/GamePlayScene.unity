@@ -2602,11 +2602,11 @@ MonoBehaviour:
   easyMaxSpeed: 0.04
   normalMinSpeed: 0.05
   normalMaxSpeed: 0.1
-  hardMinSpeed: 0.05
+  hardMinSpeed: 0.1
   hardMaxSpeed: 0.2
   insMinSpeed: 0.5
   insMaxSpeed: 2
-  maxTimer: 60
+  maxTimer: 10
   texture: {fileID: 2800000, guid: 65d1ce73e9f00e64b8025cfaafab493a, type: 3}
 --- !u!1 &1770492966
 GameObject:
