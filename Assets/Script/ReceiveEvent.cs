@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ReceiveEvent : MonoBehaviour
 {
     public static bool[] btns;
+    public static bool check = false;
+    public static float timer;
 
-   
+
 
     bool setBtn = false;
     bool manualBtn = false;
@@ -42,34 +45,40 @@ public class ReceiveEvent : MonoBehaviour
 
     void MyPointerDownUI(int pushBtn,bool[] btns )
     {
-        bool check = false;
-
-        foreach(bool btn in btns)
-        {
-            if(btn == true)
-            {
-                check = true;
-                
-
-            }
-        }
+        CheckBtn(btns);
 
         if(check == false )
         {
             btns[pushBtn] = true;
             manualPanel.SetActive(btns[pushBtn]);
-            TitleManeger.timer = 0f;
+            timer = 0f;
         }
         else if(btns[pushBtn] == true && check == true)
         {
             btns[pushBtn] = false;
             manualPanel.SetActive(btns[pushBtn]);
-            TitleManeger.timer = 0f;
+            timer = 0f;
         }
         
     }
 
-   
+    public void ExitGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public static void CheckBtn(bool[] btns)
+    {
+        check = false;
+        foreach (bool btn in btns)
+        {
+            if (btn == true)
+            {
+                check = true;
+            }
+        }
+
+    }
 
     // Update is called once per frame
     void Update()

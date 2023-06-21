@@ -18,8 +18,7 @@ public class TitleManeger : MonoBehaviour
     public static Slider mSlider;
 
     AudioSource[] titleAudio;
-    bool check;
-    public static float timer;
+   
     
 
     // Start is called before the first frame update
@@ -34,6 +33,7 @@ public class TitleManeger : MonoBehaviour
 
 
         levelText = text;
+        LevManeger.Level = LevManeger.easy;
         TitleManeger.levelText.text = "EASY";
         levelText.color = new Color(0f, 1f, 0.196f, 1f);
     }
@@ -41,34 +41,22 @@ public class TitleManeger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckBtn(ReceiveEvent.btns);
+        ReceiveEvent.CheckBtn(ReceiveEvent.btns);
         titleAudio[0].volume = mSlider.value;
         titleAudio[1].volume = SESlider.value;
         //Debug.Log("TitleCheck = " + check);
 
-        if (Input.GetMouseButtonDown(0)&& check == false && timer >= timeBetweenClicks &&
+        if (Input.GetMouseButtonDown(0)&& ReceiveEvent.check == false && ReceiveEvent.timer >= timeBetweenClicks &&
             Time.timeScale != 0) {
             Debug.Log("Start");
-            //SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
         }
         if (Input.GetMouseButtonDown(0))
         {
             titleAudio[1].PlayOneShot(sound1);
         }
 
-        timer += Time.deltaTime;
+        ReceiveEvent.timer += Time.deltaTime;
     }
 
-    void CheckBtn(bool[] btns)
-    {
-        check = false;
-        foreach (bool btn in btns)
-        {
-            if (btn == true)
-            {
-                check = true;
-            }
-        }
-
-    }
 }

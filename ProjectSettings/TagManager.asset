@@ -4,17 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Audio
-  - Drop
-  - ray
+  - Wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Audio
+  - 
   - Water
   - UI
-  - Drop
+  - 
   - 
   - 
   - 
