@@ -18,9 +18,6 @@ public class ReceiveEvent : MonoBehaviour
     int select;
     
     [SerializeField] GameObject manualPanel;
-    // 音量設定用
-    [SerializeField] UnityEvent EndPauseEvent = new UnityEvent();
-
 
     // Start is called before the first frame update
     void Start()
@@ -70,9 +67,6 @@ public class ReceiveEvent : MonoBehaviour
             btns[pushBtn] = false;
             manualPanel.SetActive(btns[pushBtn]);
             TitleManeger.timer = 0f;
-
-            //　ここでセーブ
-            EndPauseEvent.Invoke();
         }
         
     }

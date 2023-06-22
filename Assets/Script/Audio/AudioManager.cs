@@ -89,19 +89,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayClick()
     {
-        // マウスがクリックされたとき
-        if (Input.GetMouseButtonDown(0))
+        // SceneがGamePlayManagerならこっち
+        if (SceneManager.GetActiveScene().name == "GamePlayScene")
         {
-            // SceneがGamePlayManagerならこっち
-            if (SceneManager.GetActiveScene().name == "GamePlayScene")
-            {
-                gameAudio[1].PlayOneShot(soundSE[2]);
-            }
-            // 違うならこっち
-            else
-            {
-                gameAudio[1].PlayOneShot(soundSE[0]);
-            }
+            // 鳴るシーンは後で、発射のとこにeventsで入れる
+            gameAudio[1].PlayOneShot(soundSE[2]);
+        }
+        // 違うならこっち
+        else
+        {
+            gameAudio[1].PlayOneShot(soundSE[0]);
         }
     }
 
