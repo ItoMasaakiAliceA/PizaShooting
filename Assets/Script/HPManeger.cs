@@ -30,15 +30,14 @@ public class HPManeger : MonoBehaviour
             hp.transform.position = pos;
             pos.x += 35;
             HPs.Add(hp);
-            Debug.Log(HPs[i]);
         }
     }
 
+    // HP•\Ž¦
     public static void UpdateHP()
     {
         for (int i = maxHP; i > currentHP; i--)
         {
-            Debug.Log(i);
             HPs[i - 1].color = new Color(1, 1, 1, 0);
         }
     }
