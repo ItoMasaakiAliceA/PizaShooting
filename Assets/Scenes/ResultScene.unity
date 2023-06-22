@@ -338,6 +338,18 @@ PrefabInstance:
       propertyPath: SESetSlider
       value: 
       objectReference: {fileID: 2100864564}
+    - target: {fileID: 7495962453752440289, guid: 3143a5da9455b2847ba58d0a4073968b, type: 3}
+      propertyPath: soundSE.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495962453752440289, guid: 3143a5da9455b2847ba58d0a4073968b, type: 3}
+      propertyPath: soundSE.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 43f99235409c6a640a2e286fbc85f767, type: 3}
+    - target: {fileID: 7495962453752440289, guid: 3143a5da9455b2847ba58d0a4073968b, type: 3}
+      propertyPath: soundSE.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 575b24cfa5a40154892761f8f3c6cf38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3143a5da9455b2847ba58d0a4073968b, type: 3}
 --- !u!224 &903004644 stripped
@@ -923,7 +935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 437651600665933996, guid: 0cabaa2908110c745b1ae5ad08dd1b76, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 437651600665933996, guid: 0cabaa2908110c745b1ae5ad08dd1b76, type: 3}
       propertyPath: m_SizeDelta.y
@@ -959,7 +971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 437651600665933996, guid: 0cabaa2908110c745b1ae5ad08dd1b76, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 437651600665933996, guid: 0cabaa2908110c745b1ae5ad08dd1b76, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1056,7 +1068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8084450320347667595, guid: c3efd91418f2a214c982869480516fb4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8084450320347667595, guid: c3efd91418f2a214c982869480516fb4, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1092,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8084450320347667595, guid: c3efd91418f2a214c982869480516fb4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -100
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8084450320347667595, guid: c3efd91418f2a214c982869480516fb4, type: 3}
       propertyPath: m_AnchoredPosition.y
