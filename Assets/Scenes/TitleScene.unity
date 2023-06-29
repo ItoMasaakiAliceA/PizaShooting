@@ -177,6 +177,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manualPanel: {fileID: 1490483415}
+  CloseSetting:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1316061874}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: SaveVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &26309619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,10 +683,10 @@ RectTransform:
   m_Father: {fileID: 805537255}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 400.00003, y: -225.04175}
+  m_SizeDelta: {x: 800.00006, y: 450.0835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396604724
 MonoBehaviour:
@@ -1100,6 +1115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manualPanel: {fileID: 720005740}
+  CloseSetting:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &573553649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,6 +1742,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manualPanel: {fileID: 537632210}
+  CloseSetting:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &890329110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,6 +2265,17 @@ MonoBehaviour:
   easyPanel: {fileID: 557180746}
   normalPanel: {fileID: 955691847}
   hardPanel: {fileID: 1021705230}
+--- !u!114 &1316061874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7495962453752440289, guid: 3143a5da9455b2847ba58d0a4073968b, type: 3}
+  m_PrefabInstance: {fileID: 364612703}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6fdfb82332efb24b8b6f351c749c597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1490483415 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3206655253982914491, guid: e8a6a37cd78654947a7d70d6cb47aa79, type: 3}
@@ -2618,17 +2650,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &1658991549 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7495962453752440289, guid: 3143a5da9455b2847ba58d0a4073968b, type: 3}
-  m_PrefabInstance: {fileID: 364612703}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fdfb82332efb24b8b6f351c749c597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1711129593
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,10 +3035,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenClicks: 0.15
   text: {fileID: 1818908966}
-  PlayClik:
+  PushClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1658991549}
+      - m_Target: {fileID: 1316061874}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlayClick
         m_Mode: 1
@@ -3134,6 +3155,18 @@ PrefabInstance:
     - target: {fileID: 3206655253982914491, guid: e8a6a37cd78654947a7d70d6cb47aa79, type: 3}
       propertyPath: m_Name
       value: 'SetPanel '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206655254484552741, guid: e8a6a37cd78654947a7d70d6cb47aa79, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206655254484552741, guid: e8a6a37cd78654947a7d70d6cb47aa79, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206655254484552741, guid: e8a6a37cd78654947a7d70d6cb47aa79, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8a6a37cd78654947a7d70d6cb47aa79, type: 3}

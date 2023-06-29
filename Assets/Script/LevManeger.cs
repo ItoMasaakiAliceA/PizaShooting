@@ -14,7 +14,8 @@ public class LevManeger : MonoBehaviour
     [SerializeField] GameObject easyPanel;
     [SerializeField] GameObject normalPanel;
     [SerializeField] GameObject hardPanel;
-    [SerializeField] 
+
+
     //[SerializeField] TextMeshProUGUI levelText;
     // Start is called before the first frame update
 
@@ -29,14 +30,17 @@ public class LevManeger : MonoBehaviour
             case easy:
                 TitleManeger.levelText.text = "EASY";
                 TitleManeger.levelText.color = new Color(0f, 1f, 0.2f, 1f);
+
                 break;
             case normal:
                 TitleManeger.levelText.text = "NORMAL";
                 TitleManeger.levelText.color = new Color(1f, 1f, 0f, 1f);
+
                 break;
             case hard:
                 TitleManeger.levelText.text = "HARD";
                 TitleManeger.levelText.color = new Color(1f, 0f, 0f, 1f);
+
                 break;
         }
     }
@@ -54,7 +58,7 @@ public class LevManeger : MonoBehaviour
         easyPanel.SetActive(false);
         normalPanel.SetActive(false);
         hardPanel.SetActive(false);
-        TitleManeger.timer = 0f;
+        ReceiveEvent.timer = 0f;
         LevelText();
     }
 
@@ -84,6 +88,6 @@ public class LevManeger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

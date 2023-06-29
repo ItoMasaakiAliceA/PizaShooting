@@ -10,18 +10,16 @@ public class TitleManeger : MonoBehaviour
 {
     [SerializeField] float timeBetweenClicks = 0.15f;
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] UnityEvent PlayClik = new UnityEvent();
-
+    [SerializeField] UnityEvent PushClick = new UnityEvent();
 
     public static TextMeshProUGUI levelText;
-    bool check;
-    public static float timer;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
         levelText = text;
+        LevManeger.Level = LevManeger.easy;
         TitleManeger.levelText.text = "EASY";
         levelText.color = new Color(0f, 1f, 0.196f, 1f);
     }
@@ -29,32 +27,22 @@ public class TitleManeger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckBtn(ReceiveEvent.btns);
+        ReceiveEvent.CheckBtn(ReceiveEvent.btns);
+        
         //Debug.Log("TitleCheck = " + check);
 
+        if (Input.GetMouseButtonDown(0) && ReceiveEvent.check == false && ReceiveEvent.timer >= timeBetweenClicks &&
+            Time.timeScale != 0)
+        {
+            Debug.Log("Start");
+            SceneManager.LoadScene(1);
+        }
         if (Input.GetMouseButtonDown(0))
         {
-            PlayClik.Invoke();
+            PushClick.Invoke();
         }
 
-        if (Input.GetMouseButtonDown(0)&& check == false && timer >= timeBetweenClicks &&
-            Time.timeScale != 0) {
-            Debug.Log("Start");
-            SceneManager.LoadScene("GamePlayScene");
-        }
-       
-        timer += Time.deltaTime;
+        ReceiveEvent.timer += Time.deltaTime;
     }
 
-    void CheckBtn(bool[] btns)
-    {
-        check = false;
-        foreach (bool btn in btns)
-        {
-            if (btn == true)
-            {
-                check = true;
-            }
-        }
-    }
 }

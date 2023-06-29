@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 public class ReceiveEvent : MonoBehaviour
 {
     public static bool[] btns;
+    public static bool check = false;
+    public static float timer;
 
-   
+
 
     bool setBtn = false;
     bool manualBtn = false;
@@ -16,19 +19,21 @@ public class ReceiveEvent : MonoBehaviour
     int manualNum = 1;
     int levelNum = 2;
     int select;
-    
+
     [SerializeField] GameObject manualPanel;
+    [SerializeField] UnityEvent CloseSetting = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
     {
         manualPanel.SetActive(false);
-        btns = new bool[] { setBtn, manualBtn, levelBtn};
+        btns = new bool[] { setBtn, manualBtn, levelBtn };
     }
 
 
 
-    public void SetEvent() {
+    public void SetEvent()
+    {
         MyPointerDownUI(setNum, btns);
     }
 
@@ -42,40 +47,54 @@ public class ReceiveEvent : MonoBehaviour
         MyPointerDownUI(levelNum, btns);
     }
 
-    void MyPointerDownUI(int pushBtn,bool[] btns )
+    void MyPointerDownUI(int pushBtn, bool[] btns)
     {
-        bool check = false;
+        CheckBtn(btns);
 
-        foreach(bool btn in btns)
-        {
-            if(btn == true)
-            {
-                check = true;
-                
-
-            }
-        }
-
-        if(check == false )
+        if (check == false)
         {
             btns[pushBtn] = true;
             manualPanel.SetActive(btns[pushBtn]);
-            TitleManeger.timer = 0f;
+            timer = 0f;
         }
-        else if(btns[pushBtn] == true && check == true)
+        else if (btns[pushBtn] == true && check == true)
         {
+            if (setBtn == false)
+            {
+                CloseSetting.Invoke();
+            }
+
             btns[pushBtn] = false;
             manualPanel.SetActive(btns[pushBtn]);
-            TitleManeger.timer = 0f;
+            timer = 0f;
+            
+
+            
         }
-        
+
     }
 
-   
+    public void ExitGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public static void CheckBtn(bool[] btns)
+    {
+        check = false;
+        foreach (bool btn in btns)
+        {
+            if (btn == true)
+            {
+                check = true;
+            }
+        }
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
