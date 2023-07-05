@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8091636055086306311}
   m_Layer: 0
   m_Name: PizaR
-  m_TagString: Untagged
+  m_TagString: Piza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5042442429087119984}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -113,3 +113,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assistant1: {fileID: 1882314254873209347, guid: a7ac0face5bef884c84240c1891d9082, type: 3}
   assistant2: {fileID: 2319023130809099643, guid: 99d13789c4e55a943a91d26ed2ed8b19, type: 3}
+  startingHealth: 100
+  pizaPoint: 100
+  currentHealth: 0
