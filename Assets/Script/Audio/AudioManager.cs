@@ -68,12 +68,16 @@ public class AudioManager : MonoBehaviour
             gameAudio[0].PlayOneShot(soundBGM[1]);
         }
 
-        if (SceneManager.GetActiveScene().name == "ResultScene")
+        if (SceneManager.GetActiveScene().name == "GameOverScene")
         {
             gameAudio[0].PlayOneShot(soundBGM[2]);
         }
+
+        if (SceneManager.GetActiveScene().name == "ResultScene")
+        {
+            gameAudio[0].PlayOneShot(soundBGM[3]);
+        }
         
-        //gameAudio[0].PlayOneShot(soundBGM[3]);
         
     }
 
