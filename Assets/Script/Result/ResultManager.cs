@@ -9,6 +9,7 @@ public class ResultManager : MonoBehaviour
     [SerializeField] UnityEvent RetryClickEvent = new UnityEvent();
     [SerializeField] UnityEvent TitleClickEvent = new UnityEvent();
 
+
     public void Update()
     {
         
@@ -16,13 +17,15 @@ public class ResultManager : MonoBehaviour
 
     public void RetryClick()
     {
-        Debug.Log("シーン移動ゲーム");
+        //Debug.Log("シーン移動ゲーム");
+        Time.timeScale = 1;
         SceneManager.LoadScene("GamePlayScene");
     }
 
     public void TitleClick()
     {
-        Debug.Log("シーン移動タイトル");
+       // Debug.Log("シーン移動タイトル");
+        Time.timeScale = 1;
         SceneManager.LoadScene("TitleScene");
     }
 }
