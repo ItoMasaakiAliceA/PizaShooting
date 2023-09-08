@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 
-public class AudioManager : MonoBehaviour
+public class AM2 : MonoBehaviour
 {
     [SerializeField] Slider mSetSlider;
     [SerializeField] Slider SESetSlider;
@@ -27,19 +27,9 @@ public class AudioManager : MonoBehaviour
         gameAudio = GetComponents<AudioSource>();
         mSlider = mSetSlider;
         SESlider = SESetSlider;
-       
-        
+
         float bgmVolume = PlayerPrefs.GetFloat("bgm");
         float seVolume = PlayerPrefs.GetFloat("se");
-
-        if (alice == false)
-        {
-            mSlider.value = 0.35f;
-            PlayerPrefs.SetFloat("bgm", mSlider.value);
-            SESlider.value = 0.35f;
-            PlayerPrefs.SetFloat("se", SESlider.value);
-            alice = true;
-        }
 
         mSlider.value = bgmVolume;
         SESlider.value = seVolume;
@@ -51,19 +41,23 @@ public class AudioManager : MonoBehaviour
     }
 
 
+
     public void Update()
     {
-        
         gameAudio[0].volume = mSlider.value;
         gameAudio[1].volume = SESlider.value;
-
     }
 
     public void SaveVolume()
     {
         PlayerPrefs.SetFloat("bgm", mSlider.value);
         PlayerPrefs.SetFloat("se", SESlider.value);
-
+        if (alice == false)
+        {
+            PlayerPrefs.SetFloat("bgm",0.35f);
+            PlayerPrefs.SetFloat("se", 0.35f);
+            alice = true;
+        }
         Debug.Log("save");
         Debug.Log(PlayerPrefs.GetFloat("bgm"));
         Debug.Log(PlayerPrefs.GetFloat("se"));
@@ -74,37 +68,25 @@ public class AudioManager : MonoBehaviour
         //  タイトルシーンで流すやつ
         if (SceneManager.GetActiveScene().name == "TitleScene")
         {
-            //gameAudio[0].PlayOneShot(soundBGM[0]);
-            gameAudio[0].clip = soundBGM[0];
-            gameAudio[0].loop = true;
-            gameAudio[0].Play();
+            gameAudio[0].PlayOneShot(soundBGM[0]);
         }
 
         if (SceneManager.GetActiveScene().name == "GamePlayScene")
         {
-            //gameAudio[0].PlayOneShot(soundBGM[1]);
-            gameAudio[0].clip = soundBGM[1];
-            gameAudio[0].loop = true;
-            gameAudio[0].Play();
+            gameAudio[0].PlayOneShot(soundBGM[1]);
         }
 
         if (SceneManager.GetActiveScene().name == "GameOverScene")
         {
-            //gameAudio[0].PlayOneShot(soundBGM[2]);
-            gameAudio[0].clip = soundBGM[2];
-            gameAudio[0].loop = true;
-            gameAudio[0].Play();
+            gameAudio[0].PlayOneShot(soundBGM[2]);
         }
 
         if (SceneManager.GetActiveScene().name == "ResultScene")
         {
-            gameAudio[0].clip = soundBGM[3];
-            gameAudio[0].loop = true;
-            gameAudio[0].Play();
-            //gameAudio[0].PlayOneShot(soundBGM[3]);
+            gameAudio[0].PlayOneShot(soundBGM[3]);
         }
-
-
+        
+        
     }
 
     public void PlayEsc()

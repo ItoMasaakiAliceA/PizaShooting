@@ -18,7 +18,7 @@ public class OptionScript : MonoBehaviour
 
             OptionManager.SetActive(!OptionManager.activeSelf);
 
-            Debug.Log(OptionManager.activeSelf);
+            //Debug.Log(OptionManager.activeSelf);
 
             if (OptionManager.activeSelf == true)
             {

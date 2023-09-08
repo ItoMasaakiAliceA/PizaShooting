@@ -67,9 +67,9 @@ public class ReceiveEvent : MonoBehaviour
             btns[pushBtn] = false;
             manualPanel.SetActive(btns[pushBtn]);
             timer = 0f;
-            
 
-            
+
+
         }
 
     }

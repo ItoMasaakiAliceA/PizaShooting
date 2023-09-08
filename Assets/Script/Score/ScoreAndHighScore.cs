@@ -12,22 +12,37 @@ public class ScoreAndHighScore : MonoBehaviour
     Text highScoreTx;
 
     public static Text scoreText;
-    // ハイスコアを表示するUIの取得用
-    public static Text highScoreText;
+
 
     // スコアのカウント用
-    private static int score;
+    public static int score;
 
     // ハイスコアのカウント用
     private static int highScore;
+    //private static bool New = false;
 
-    // PlayerPrefsで保存するためのキー
-    private string highScoreKey = "highScore";
+
+
+    public static int GetScore()
+    {
+        //スコア送りまーす
+        return score;
+    }
+
+    /*public static bool GetNew()
+    {
+        return New;
+    }*/
+
+    public static int GetHighScore()
+    {
+        //ハイスコア送りまーす
+        return highScore;
+    }
 
     void Start()
     {
         scoreText = scoreTx;
-        highScoreText = highScoreTx;
         Initialize();
     }
 
@@ -36,46 +51,52 @@ public class ScoreAndHighScore : MonoBehaviour
     {
         // スコアを0に戻す
         score = 0;
-
         // highScoreKeyの値で保存されているハイスコアを検索して取得する。保存されてなければ0を取得する。
-        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        highScore = PlayerPrefs.GetInt("highScore", 0);
+        //Debug.Log(highScore);
+        highScoreTx.text = "HighScore:" + highScore.ToString();
     }
 
     // ポイントの追加。修飾子をpublicにしているので外部より参照できるメソッドになっている
     public static void AddPoint(int point)　　　　　　//　外部より受け取ったint型の引数をpointとして受け取る
     {
         score += point;
-        Debug.Log(score);                       // ここで確認すると、ブロックからの情報が届いているか確認できる。表示されなければ届いていないということになる。
+       // Debug.Log(score);                       // ここで確認すると、ブロックからの情報が届いているか確認できる。表示されなければ届いていないということになる。
 
         // スコアがハイスコアより大きくなれば、ハイスコアを更新する
         if (highScore < score)
         {
             highScore = score;
+           // New = true;
 
-            Debug.Log(highScore);               // ハイスコアの更新が正常に行われたか確認できる
+           // Debug.Log(highScore);               // ハイスコアの更新が正常に行われたか確認できる
         }
 
         // ゲーム画面上のスコアとハイスコアの表示を更新する
         DisplayScores();
+        
     }
 
     // ゲーム画面上のスコアとハイスコアの表示を更新する
-    private static void DisplayScores()
+    public  static void DisplayScores()
     {
         // 現在のスコアとハイスコアを画面に表示する
-        Debug.Log(score.ToString());
+        //Debug.Log(score.ToString());
         scoreText.text = "Score:" + score.ToString();
-        highScoreText.text = "HighScore:" + highScore.ToString();
+
     }
 
     // ハイスコアの保存
-    public void Save()
+    /*public void Save(int highScore)
     {
         // ハイスコアを保存する
-        PlayerPrefs.SetInt(highScoreKey, highScore);
+        PlayerPrefs.SetInt("highScore", highScore);
         PlayerPrefs.Save();
 
         // ゲーム開始前の状態に戻す
         Initialize();
-    }
+        Debug.Log("とんでもねぇ待ってたんだ");
+    }*/
+
+
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class TitleManeger : MonoBehaviour
+public class TitleManager : MonoBehaviour
 {
     [SerializeField] float timeBetweenClicks = 0.15f;
     [SerializeField] TextMeshProUGUI text;
@@ -20,7 +19,7 @@ public class TitleManeger : MonoBehaviour
     {
         levelText = text;
         LevManeger.Level = LevManeger.easy;
-        TitleManeger.levelText.text = "EASY";
+        TitleManager.levelText.text = "EASY";
         levelText.color = new Color(0f, 1f, 0.196f, 1f);
     }
 
@@ -28,13 +27,13 @@ public class TitleManeger : MonoBehaviour
     void Update()
     {
         ReceiveEvent.CheckBtn(ReceiveEvent.btns);
-        
+
         //Debug.Log("TitleCheck = " + check);
 
         if (Input.GetMouseButtonDown(0) && ReceiveEvent.check == false && ReceiveEvent.timer >= timeBetweenClicks &&
             Time.timeScale != 0)
         {
-            Debug.Log("Start");
+            //Debug.Log("Start");
             SceneManager.LoadScene(1);
         }
         if (Input.GetMouseButtonDown(0))

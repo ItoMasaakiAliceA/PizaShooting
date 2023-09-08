@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeScript : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class LifeScript : MonoBehaviour
     {
         for (int i = 0; i < lifes.Length; i++)
         {
-            if (i < life)
+            if (i != 1)
             {
                 lifes[i].SetActive(true);
             }
@@ -19,5 +20,7 @@ public class LifeScript : MonoBehaviour
                 lifes[i].SetActive(false);
             }
         }
+
+
     }
 }

@@ -25,6 +25,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         SetScore();
+       
     }
 
     void SetScore()
