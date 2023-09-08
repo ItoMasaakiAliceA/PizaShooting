@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         gameAudio = GetComponents<AudioSource>();
+
         mSlider = mSetSlider;
         SESlider = SESetSlider;
 
@@ -44,6 +45,9 @@ public class AudioManager : MonoBehaviour
     {
         gameAudio[0].volume = mSlider.value;
         gameAudio[1].volume = SESlider.value;
+
+        AudioSource audioSourse = GetComponent<AudioSource>();
+        audioSourse.loop = true;
     }
 
     public void SaveVolume()
@@ -60,22 +64,34 @@ public class AudioManager : MonoBehaviour
         //  タイトルシーンで流すやつ
         if (SceneManager.GetActiveScene().name == "TitleScene")
         {
-            gameAudio[0].PlayOneShot(soundBGM[0]);
+            //gameAudio[0].PlayOneShot(soundBGM[0]);
+            gameAudio[0].clip = soundBGM[0];
+            gameAudio[0].loop = true;
+            gameAudio[0].Play();
         }
 
         if (SceneManager.GetActiveScene().name == "GamePlayScene")
         {
-            gameAudio[0].PlayOneShot(soundBGM[1]);
+            //gameAudio[0].PlayOneShot(soundBGM[1]);
+            gameAudio[0].clip = soundBGM[1];
+            gameAudio[0].loop = true;
+            gameAudio[0].Play();
         }
 
         if (SceneManager.GetActiveScene().name == "GameOverScene")
         {
-            gameAudio[0].PlayOneShot(soundBGM[2]);
+            //gameAudio[0].PlayOneShot(soundBGM[2]);
+            gameAudio[0].clip = soundBGM[2];
+            gameAudio[0].loop = true;
+            gameAudio[0].Play();
         }
 
         if (SceneManager.GetActiveScene().name == "ResultScene")
         {
-            gameAudio[0].PlayOneShot(soundBGM[3]);
+            gameAudio[0].clip = soundBGM[3];
+            gameAudio[0].loop = true;
+            gameAudio[0].Play();
+            //gameAudio[0].PlayOneShot(soundBGM[3]);
         }
         
         
